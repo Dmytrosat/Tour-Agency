@@ -7,24 +7,25 @@
     <title>Traveling with us</title>
     <!-- <link rel="stylesheet" href="./style/reset.css" /> -->
     <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" type="image/png" href="./images/favicon/tour.png" />
 </head>
 
 <!-- Header -->
-<header>
-    <h1>Traveling with us</h1>
-    <nav>
-        <ul>
-            <li>
+<header class="header">
+    <h1 class="header__title">Traveling with us</h1>
+    <nav class="header__nav">
+        <ul class="header__nav-list">
+            <li class="header__nav-item">
                 <a href="#about">About</a>
             </li>
-            <li>
+            <li class="header__nav-item">
                 <a href="#plan_tour">Plan Tour</a>
             </li>
-            <li>
+            <li class="header__nav-item">
                 <a href="#order_tour">Order Tour</a>
             </li>
-            <li>
-                <a href="#experiences">Experiences</a>
+            <li class="header__nav-item">
+                <a href="#experience">Experiences</a>
             </li>
         </ul>
     </nav>
@@ -32,11 +33,11 @@
 <!-- Main -->
 <main>
     <!-- About -->
-    <section id="about">
-        <div>
-            <div>
-                <h2> We help discover amazing destinations for you</h2>
-                <ul>
+    <section id="about" class="section">
+        <div class="section__content">
+            <div class="section__text">
+                <h2 class="section__title">We help discover amazing destinations for you</h2>
+                <ul class="section__list">
                     <li>Experience diverse cultures and traditions</li>
                     <li>Visit world-renowned landmarks and natural wonders</li>
                     <li>Explore hidden gems off the beaten path</li>
@@ -47,11 +48,11 @@
         </div>
     </section>
     <!-- Plan Tour -->
-    <section id="plan_tour">
-        <div>
-            <div>
-                <h2>Plan Your Perfect Trip</h2>
-                <ul>
+    <section id="plan_tour" class="section">
+        <div class="section__content">
+            <div class="section__text">
+                <h2 class="section__title">Plan Your Perfect Trip</h2>
+                <ul class="section__list">
                     <li>Get personalized recommendations based on your preferences</li>
                     <li>Compare prices and find the best deals</li>
                     <li>Book flights, accommodations, and activities seamlessly</li>
@@ -59,158 +60,186 @@
                     <li>Enjoy peace of mind with 24/7 customer support</li>
                 </ul>
             </div>
-            <button type="button">Plan a tour</button>
+            <button type="button" class="section__button">Plan a tour</button>
         </div>
     </section>
     <!-- Order Tour -->
-    <section id="order_tour">
+    <section id="order_tour" class="tour-cards">
         <!-- Card -->
-        <div>
-            <img src="./images/Bali.jpg" alt="Mystical Bali Adventure">
-            <h3>Mystical Bali Adventure</h3>
-            <p>
+        <div class="tour-card">
+            <img src="./images/tour/Bali.jpg" alt="Mystical Bali Adventure" class="tour-card__image">
+            <h3 class="tour-card__title">Mystical Bali Adventure</h3>
+            <p class="tour-card__description">
                 Explore the enchanting island of Bali, with its lush jungles, vibrant culture, and ancient temples.
                 Visit the iconic Tanah Lot temple, hike to the summit of Mount Batur, and unwind on the pristine beaches
                 of Nusa Dua.
             </p>
-            <div>
-                <button type="submit">Buy Tour</button>
-                <button type="submit">More Info</button>
+            <div class="tour-card__buttons">
+                <button class="tour-card__button tour-card__button-buy">Buy Tour</button>
+                <button class="tour-card__button tour-card__button-info"> More Info</button>
             </div>
         </div>
         <!-- Card -->
-        <div>
-            <img src="./images/Alaska.jpg" alt="Alaskan Wilderness Expedition">
-            <h3>Alaskan Wilderness Expedition</h3>
-            <p>
+        <div class="tour-card">
+            <img src="./images/tour/Alaska.jpg" alt="Alaskan Wilderness Expedition" class="tour-card__image">
+            <h3 class="tour-card__title">Alaskan Wilderness Expedition</h3>
+            <p class="tour-card__description">
                 Immerse yourself in the rugged beauty of Alaska, a land of towering mountains, pristine glaciers, and
                 lush forests. Explore untouched wilderness, witness awe-inspiring wildlife, and experience unforgettable
                 adventures.
             </p>
-            <div>
-                <button type="submit">Buy Tour</button>
-                <button type="submit">More Info</button>
+            <div class="tour-card__buttons">
+                <button class="tour-card__button tour-card__button-buy">Buy Tour</button>
+                <button class="tour-card__button tour-card__button-info"> More Info</button>
             </div>
         </div>
         <!-- Card -->
-        <div>
-            <img src="./images/Egypt_pyramids.jpg" alt="Enigmatic Egyptian Odyssey">
-            <h3>Enigmatic Egyptian Odyssey</h3>
-            <p>
+        <div class="tour-card">
+            <img src="./images/tour/Egypt_pyramids.jpg" alt="Enigmatic Egyptian Odyssey" class="tour-card__image">
+            <h3 class="tour-card__title">Enigmatic Egyptian Odyssey</h3>
+            <p class="tour-card__description">
                 Uncover the mysteries of ancient Egypt, from the iconic pyramids and Sphinx to the bustling markets and
                 vibrant cities along the Nile River. Delve into the history, art, and culture that have captivated the
                 world for millennia.
             </p>
-            <div>
-                <button type="submit">Buy Tour</button>
-                <button type="submit">More Info</button>
+            <div class="tour-card__buttons">
+                <button class="tour-card__button tour-card__button-buy">Buy Tour</button>
+                <button class="tour-card__button tour-card__button-info"> More Info</button>
             </div>
         </div>
         <!-- Card -->
-        <div>
-            <img src="./images/New_Zealand.jpg" alt="Scenic New Zealand Adventure">
-            <h3>Scenic New Zealand Adventure</h3>
-            <p>
+        <div class="tour-card">
+            <img src="./images/tour/New_Zealand.jpg" alt="Scenic New Zealand Adventure" class="tour-card__image">
+            <h3 class="tour-card__title">Scenic New Zealand Adventure</h3>
+            <p class="tour-card__description">
                 Traverse the stunning landscapes of New Zealand, from the lush rainforests and pristine beaches to the
                 dramatic mountains and glaciers. Experience the adventure and natural beauty that make this destination
                 truly unique.
             </p>
-            <div>
-                <button type="submit">Buy Tour</button>
-                <button type="submit">More Info</button>
+            <div class="tour-card__buttons">
+                <button class="tour-card__button tour-card__button-buy">Buy Tour</button>
+                <button class="tour-card__button tour-card__button-info"> More Info</button>
             </div>
         </div>
         <!-- Card -->
-        <div>
-            <img src="./images/Machu_Picchu.jpg" alt="Mystical Machu Picchu Trek">
-            <h3>Mystical Machu Picchu Trek</h3>
-            <p>
+        <div class="tour-card">
+            <img src="./images/tour/Machu_Picchu.jpg" alt="Mystical Machu Picchu Trek" class="tour-card__image">
+            <h3 class="tour-card__title">Mystical Machu Picchu Trek</h3>
+            <p class="tour-card__description">
                 Venture deep into the heart of the Andes, where you'll uncover the ancient secrets of Machu Picchu, the
                 lost city of the Incas. Hike through breathtaking landscapes and immerse yourself in the rich history
                 and culture of Peru.
             </p>
-            <div>
-                <button type="submit">Buy Tour</button>
-                <button type="submit">More Info</button>
+            <div class="tour-card__buttons">
+                <button class="tour-card__button tour-card__button-buy">Buy Tour</button>
+                <button class="tour-card__button tour-card__button-info"> More Info</button>
             </div>
         </div>
         <!-- Card -->
-        <div>
-            <img src="./images/Rio_Carnival.jpg" alt="Vibrant Rio de Janeiro Carnival">
-            <h3>Vibrant Rio de Janeiro Carnival</h3>
-            <p>
+        <div class="tour-card">
+            <img src="./images/tour/Rio_Carnival.jpg" alt="Vibrant Rio de Janeiro Carnival" class="tour-card__image">
+            <h3 class="tour-card__title">Vibrant Rio de Janeiro Carnival</h3>
+            <p class="tour-card__description">
                 Experience the energy and excitement of Rio de Janeiro's world-famous Carnival, where colorful parades,
                 pulsating samba rhythms, and lively street parties come together in a dazzling celebration of life.
             </p>
-            <div>
-                <button type="submit">Buy Tour</button>
-                <button type="submit">More Info</button>
+            <div class="tour-card__buttons">
+                <button class="tour-card__button tour-card__button-buy">Buy Tour</button>
+                <button class="tour-card__button tour-card__button-info"> More Info</button>
             </div>
         </div>
         <!-- Card -->
-        <div>
-            <img src="./images/African_Safari.jpg" alt="Majestic African Safari">
-            <h3>Majestic African Safari</h3>
-            <p>
+        <div class="tour-card">
+            <img src="./images/tour/African_Safari.jpg" alt="Majestic African Safari" class="tour-card__image">
+            <h3 class="tour-card__title">Majestic African Safari</h3>
+            <p class="tour-card__description">
                 Embark on a thrilling journey through the African wilderness, where you'll encounter diverse wildlife,
                 breathtaking landscapes, and vibrant cultures. Discover the untamed beauty of the African savanna.
             </p>
-            <div>
-                <button type="submit">Buy Tour</button>
-                <button type="submit">More Info</button>
+            <div class="tour-card__buttons">
+                <button class="tour-card__button tour-card__button-buy">Buy Tour</button>
+                <button class="tour-card__button tour-card__button-info"> More Info</button>
             </div>
         </div>
         <!-- Card -->
-        <div>
-            <img src="./images/National_Park.jpg" alt="Blue Mountains National Park">
-            <h3>Blue Mountains National Park</h3>
-            <p>
+        <div class="tour-card">
+            <img src="./images/tour/National_Park.jpg" alt="Blue Mountains National Park" class="tour-card__image">
+            <h3 class="tour-card__title">Blue Mountains National Park</h3>
+            <p class="tour-card__description">
                 This is the most picturesque part of the Great Watershed Range. Most of the park is occupied by deep
                 green valleys with rivers and lakes.
             </p>
-            <div>
-                <button type="submit">Buy Tour</button>
-                <button type="submit">More Info</button>
+            <div class="tour-card__buttons">
+                <button class="tour-card__button tour-card__button-buy">Buy Tour</button>
+                <button class="tour-card__button tour-card__button-info"> More Info</button>
             </div>
         </div>
         <!-- Card -->
-        <div>
-            <img src="./images/Jasper_Park.jpg" alt="Jasper National Nature Park">
-            <h3>Jasper National Nature Park</h3>
-            <p>
+        <div class="tour-card">
+            <img src="./images/tour/Jasper_Park.jpg" alt="Jasper National Nature Park" class="tour-card__image">
+            <h3 class="tour-card__title">Jasper National Nature Park</h3>
+            <p class="tour-card__description">
                 The magnificent landscapes of Jasper Park - the largest park of the Rocky Mountains - spread over more
                 than 10,800 square kilometers in the upper reaches of the Athabasca River and open up a magical world of
                 unique nature: shimmering glaciers, sparkling transparent lakes, roaring waterfalls, deep canyons,
                 majestic snow-capped mountains peaks and evergreen forests, which are home to rare animals and more than
                 200 species of birds.
             </p>
-            <div>
-                <button type="submit">Buy Tour</button>
-                <button type="submit">More Info</button>
+            <div class="tour-card__buttons">
+                <button class="tour-card__button tour-card__button-buy">Buy Tour</button>
+                <button class="tour-card__button tour-card__button-info"> More Info</button>
             </div>
         </div>
         <!-- Card -->
-        <div>
-            <img src="./images/Antarctica.jpg" alt="The edge of the world to Antarctica">
-            <h3>The edge of the world to Antarctica</h3>
-            <p>
+        <div class="tour-card">
+            <img src="./images/tour/Antarctica.jpg" alt="The edge of the world to Antarctica" class="tour-card__image">
+            <h3 class="tour-card__title">The edge of the world to Antarctica</h3>
+            <p class="tour-card__description">
                 A harsh wild land, carved by fjords and glacial valleys, where giant condors soar above the sharp peaks
                 of granite mountains, and heavy cold waves roll over sparkling glaciers... This is the homeland of
                 penguins and no people live here. The edge of the earth. Then there is only the silent majesty of the
                 icy beauty of the southern tip of the Earth: zero population, 24 time zones, minus temperatures.
             </p>
-            <div>
-                <button type="submit">Buy Tour</button>
-                <button type="submit">More Info</button>
+            <div class="tour-card__buttons">
+                <button class="tour-card__button tour-card__button-buy">Buy Tour</button>
+                <button class="tour-card__button tour-card__button-info"> More Info</button>
+            </div>
+        </div>
+        <!-- Card -->
+        <div class="tour-card">
+            <img src="./images/tour/Paris.jpg" alt="Romantic Paris Escape" class="tour-card__image">
+            <h3 class="tour-card__title">Romantic Paris Escape</h3>
+            <p class="tour-card__description">
+                Immerse yourself in the beauty and charm of the City of Love. Stroll along the Seine, marvel at the
+                architectural masterpiece of the Eiffel Tower, and indulge in the world-famous French cuisine at
+                charming cafés and bistros.
+            </p>
+            <div class="tour-card__buttons">
+                <button class="tour-card__button tour-card__button-buy">Buy Tour</button>
+                <button class="tour-card__button tour-card__button-info"> More Info</button>
+            </div>
+        </div>
+        <!-- Card -->
+        <div class="tour-card">
+            <img src="./images/tour/Tokyo.jpg" alt="Futuristic Tokyo Odyssey" class="tour-card__image">
+            <h3 class="tour-card__title">Futuristic Tokyo Odyssey</h3>
+            <p class="tour-card__description">
+                Discover the captivating blend of tradition and innovation in Tokyo. Experience the city's bustling
+                streets and neon-lit nights, visit ancient temples and shrines, and savor the exquisite flavors of
+                Japanese cuisine.
+            </p>
+            <div class="tour-card__buttons">
+                <button class="tour-card__button tour-card__button-buy">Buy Tour</button>
+                <button class="tour-card__button tour-card__button-info"> More Info</button>
             </div>
         </div>
     </section>
-    <!-- Experiences -->
-    <section id="experiences">
-        <div>
-            <div>
-                <h2>Share Your Experiences</h2>
-                <ul>
+    <!-- Experience -->
+    <section id="experience" class="section">
+        <div class="section__content">
+            <div class="section__text">
+                <h2 class="section__title">Share Your Experiences</h2>
+                <ul class="section__list">
                     <li>Connect with fellow travelers around the world</li>
                     <li>Share your stories, tips, and recommendations</li>
                     <li>Upload photos and videos of your adventures</li>
@@ -218,13 +247,13 @@
                     <li>Inspire others to embark on their own journeys</li>
                 </ul>
             </div>
-            <button type="submit">Share</button>
+            <button type="submit" class="section__button">Share</button>
         </div>
     </section>
 </main>
 <!-- Footer -->
-<footer>
-    <p>
+<footer class="footer">
+    <p class="footer__text">
         Traveling with us &copy; 2023. All Rights Reserved.
     </p>
 </footer>
