@@ -9,6 +9,7 @@
 :root {
 
     --color-background-header: #23a0a5;
+    --color-background-header-nav: rgba(0, 0, 0, 0.2);
     --color-background-button: #1abc6b;
     --color-background-button-hover: #f3dc0a;
     --color-background-button-active: #c9e2ee;
@@ -21,6 +22,9 @@
     --color-button-info: #e61919;
     --color-button-info-hover: #3cd42e;
     --color-background-footer: #181b1b;
+    --color-background-card: #f0f2f5;
+    --color-background-shadow: rgba(0, 0, 0, 0.1);
+    --color-background-hamburger: #ff1100;
 }
 
 html {
@@ -44,19 +48,19 @@ body {
 
 .header {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     background-color: var(--color-background-header);
     flex: 0 0 10%;
     height: 100%;
-    /* min-height: 60px; */
     top: 0;
     position: sticky;
     margin: 0;
+    padding: 10px;
 }
 
 .header__logo img {
-    margin: 5px 0;
+    /* margin: 10px 0 5px 20px; */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -86,9 +90,81 @@ body {
     display: flex;
 }
 
-.header__nav-list {
+/* Hamburger */
+#menu__toggle {
+    opacity: 0;
+}
+
+.menu__btn {
     display: flex;
+    align-items: center;
+    position: fixed;
+    top: 25px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.menu__btn>span,
+.menu__btn>span::before,
+.menu__btn>span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-background-hamburger);
+}
+
+.menu__btn>span::before {
+    content: '';
+    top: -10px;
+}
+
+.menu__btn>span::after {
+    content: '';
+    top: 10px;
+}
+
+#menu__toggle:checked~.menu__btn>span {
+    transform: rotate(45deg);
+}
+
+#menu__toggle:checked~.menu__btn>span::before {
+    top: 0;
+    transform: rotate(0);
+}
+
+#menu__toggle:checked~.menu__btn>span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#menu__toggle:checked~.header__nav-list {
+    visibility: visible;
+    right: 0;
+}
+
+/* Navigation */
+.header__nav-list {
+    display: block;
+    align-items: center;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    right: -100%;
+    width: 200px;
+    height: 200px;
+    margin: 0;
+    padding: 10px 0 0;
     list-style: none;
+    text-align: left;
+    background-color: var(--color-background-header-nav);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.4s;
 }
 
 .header__nav-item {
@@ -96,8 +172,11 @@ body {
 }
 
 .header__nav-link {
+    display: block;
+    padding: 10px;
     color: var(--color-primary);
-    font-size: 1em;
+    font-size: 0.8em;
+    font-weight: 600;
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -125,10 +204,17 @@ body {
     background-size: cover;
 }
 
+.section__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .section__title {
     font-size: 1.5em;
     color: var(--color-primary);
     margin-bottom: 20px;
+    text-align: left;
 }
 
 .section__content {
@@ -200,8 +286,8 @@ body {
     text-align: left;
     border-radius: 5px;
     color: var(--color-secondary);
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #f0f2f5; */
+    box-shadow: 0 4px 6px var(--color-background-shadow);
+    background-color: var(--color-background-card);
     overflow: hidden;
 }
 
@@ -266,13 +352,26 @@ body {
 
 .footer {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    text-align: center;
     background-color: var(--color-background-footer);
     height: 100%;
     min-height: 60px;
     bottom: 0;
     position: sticky;
+    padding: 10px;
+}
+
+.footer__logo img {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer__logo:hover {
+    transition: all 0.3s ease 0s;
+    transform: rotate(1.0turn) scale(1.0);
 }
 
 .footer__text {
@@ -295,4 +394,135 @@ body {
 
 .contacts__link a img {
     padding: 0 5px;
+    width: 30px;
+}
+
+/* media requests */
+
+@media screen and (max-width: 890px) {
+    .header__title {
+        font-size: 1.2em;
+    }
+
+    .header__nav-list {
+        width: 150px;
+        height: 160px;
+    }
+
+    .header__nav-item {
+        margin-left: 10px;
+    }
+
+    .header__nav {
+        font-size: 0.7em;
+    }
+
+    .section__content {
+        display: flex;
+        flex-direction: column;
+        /* gap: 100px;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        text-align: left; */
+    }
+
+    .tour-cards {
+        padding: 0.5rem;
+    }
+
+    .tour-card {
+        width: calc(50% - 1rem);
+        margin: 0 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .tour-card__description {
+        font-size: 0.7em;
+        line-height: 1.2;
+        margin-bottom: 0.5em;
+    }
+
+    .tour-card__button {
+        font-size: 0.5em;
+        padding: 10px;
+        margin: 0 10px;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer__logo,
+    .footer__text,
+    .contacts-link {
+        padding: 0 0 10px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .header__title {
+        font-size: 1em;
+    }
+
+    .header__nav-list {
+        top: 80px;
+        right: -100%;
+    }
+
+    /* .section {
+        height: 30vh;
+    } */
+
+    .section__content {
+        gap: 20px;
+        width: 100%;
+        font-size: 0.75em;
+    }
+
+    .section__title {
+        font-size: 1.25em;
+        text-align: center;
+    }
+
+    .section__list {
+        font-size: 1.0em;
+    }
+
+    .section__button {
+        font-size: 1em;
+        padding: 20px 0;
+        width: 25%;
+    }
+
+    .tour-card {
+        width: calc(100% - 0.5rem);
+        margin: 0;
+        padding: 0.5rem;
+    }
+
+    .tour-card__image {
+        border-radius: 5px;
+        margin-bottom: 0.3rem;
+    }
+
+    .tour-card__description {
+        font-size: 0.75em;
+        line-height: 1.25em;
+        margin-bottom: 0.3em;
+    }
+}
+
+@media screen and (max-width: 470px) {
+
+    .section__list {
+        font-size: 0.8em;
+    }
+
+    .section__button {
+        font-size: 0.8em;
+        padding: 10px 0;
+        min-width: 20%;
+    }
 }
