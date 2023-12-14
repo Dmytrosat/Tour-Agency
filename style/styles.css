@@ -8,23 +8,32 @@
 /* Global properties (variables) */
 :root {
 
-    --color-background-header: #23a0a5;
+    --color-background-header: #4bce7d;
     --color-background-header-nav: rgba(0, 0, 0, 0.2);
     --color-background-button: #1abc6b;
     --color-background-button-hover: #f3dc0a;
     --color-background-button-active: #c9e2ee;
+    --color-background-button-experience: #f39c12;
+    --color-background-button-experience-hover: #e67e22;
     --color-primary: #ffffff;
     --color-secondary: #000000;
     --color-header-hover: #f30909;
     --color-header-active: #16ff50;
     --color-button-buy: #b8e916;
-    --color-button-buy-hover: #0c9cc0;
+    --color-button-buy-hover: #420cc0;
     --color-button-info: #e61919;
     --color-button-info-hover: #3cd42e;
     --color-background-footer: #181b1b;
     --color-background-card: #f0f2f5;
     --color-background-shadow: rgba(0, 0, 0, 0.1);
     --color-background-hamburger: #ff1100;
+    --color-background-modal: rgba(0, 0, 0, 0.6);
+    --color-close-modal: #1b1a1a;
+    --color-flag-yellow: #F6C901;
+    --color-flag-blue: #014DB6;
+    --color-preloader-border: #007bff;
+    --color-progressbar-background: rgb(255, 243, 82);
+    --color-progressbar-line: rgb(14, 125, 228);
 }
 
 html {
@@ -44,6 +53,58 @@ body {
     color: var(--color-primary);
 }
 
+/* Preloader */
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.preloader::before {
+    content: "";
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--color-preloader-border);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Progressbar */
+
+.progressbar {
+    margin: 0 auto;
+    height: 10px;
+    width: 100%;
+    background: var(--color-progressbar-background);
+    position: fixed;
+    top: 80px;
+}
+
+.progressbar>.progressbar-line {
+    height: 10px;
+    width: 0;
+    background: var(--color-progressbar-line);
+}
+
 /* Header */
 
 .header {
@@ -60,7 +121,6 @@ body {
 }
 
 .header__logo img {
-    /* margin: 10px 0 5px 20px; */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -226,15 +286,15 @@ body {
     text-align: center;
 }
 
-#about {
+.section-1 {
     background-image: url('..//images/tour/image1.jpg');
 }
 
-#plan_tour {
+.section-2 {
     background-image: url('..//images/tour/image2.jpg');
 }
 
-#experience {
+.section-3 {
     background-image: url('..//images/tour/image3.jpg');
 }
 
@@ -269,6 +329,20 @@ body {
     background-color: var(--color-background-button-active);
 }
 
+.section__button-2 {
+    order: -1;
+}
+
+.section__button-3 {
+    background-color: var(--color-background-button-experience);
+    margin-top: 20px;
+}
+
+.section__button-3:hover {
+    background-color: var(--color-background-button-experience-hover);
+}
+
+/* Tour Cards */
 .tour-cards {
     display: flex;
     justify-content: space-between;
@@ -420,11 +494,6 @@ body {
     .section__content {
         display: flex;
         flex-direction: column;
-        /* gap: 100px;
-        align-items: center;
-        justify-content: center;
-        width: 80%;
-        text-align: left; */
     }
 
     .tour-cards {
@@ -470,10 +539,6 @@ body {
         top: 80px;
         right: -100%;
     }
-
-    /* .section {
-        height: 30vh;
-    } */
 
     .section__content {
         gap: 20px;
@@ -524,5 +589,121 @@ body {
         font-size: 0.8em;
         padding: 10px 0;
         min-width: 20%;
+    }
+}
+
+/* modal window */
+
+.modal {
+    display: none;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--color-background-modal);
+    transition: width .2s ease-out .15s;
+}
+
+.modal-content {
+    color: var(--color-secondary);
+    background-color: var(--color-background-card);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid var(--color-secondary);
+    border-radius: 5px;
+    width: 80%;
+    box-shadow: 0 4px 6px var(--color-background-shadow);
+}
+
+.modal-content>p>strong {
+    font-size: 0.9em;
+    font-weight: 800;
+    padding: 10px 0;
+    color: var(--color-button-buy-hover);
+}
+
+#modalTitle {
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0 0 10px;
+    text-decoration: underline;
+    color: var(--color-background-button);
+}
+
+#modalPrice,
+#modalDuration {
+    font-size: 1.2em;
+    font-weight: 700;
+    padding: 10px 0;
+    color: var(--color-button-info-hover);
+}
+
+#modalDescription {
+    font-size: 0.9em;
+    font-weight: 500;
+    color: var(--color-button-info);
+    padding: 10px 0;
+}
+
+.close {
+    color: var(--color-close-modal);
+    float: right;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--color-background-header);
+    text-decoration: none;
+}
+
+/* Btn-Up */
+
+.btn-up {
+    position: fixed;
+    background-color: var(--color-flag-blue);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cg fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 17V4M3 10l7-7 7 7'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    left: 80px;
+    bottom: 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.15s ease-in-out, transform 0.3s ease-in-out;
+    color: var(--color-primary);
+    width: 50px;
+    height: 50px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.btn-up_hide {
+    display: none;
+}
+
+.btn-up_hiding {
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.btn-up-icon {
+    width: 40px;
+    height: 40px;
+    fill: currentcolor;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .btn-up:hover {
+        background-color: var(--color-flag-yellow);
     }
 }
