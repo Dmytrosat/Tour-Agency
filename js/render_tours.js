@@ -5,7 +5,7 @@ const toursCardsData = [
       "Explore the enchanting island of Bali, with its lush jungles, vibrant culture, and ancient temples. Visit the iconic Tanah Lot temple, hike to the summit of Mount Batur, and unwind on the pristine beaches of Nusa Dua.",
     price: 2000,
     duration: 7,
-    imageUrl: "images/tour/bali.jpg",
+    imageUrl: "images/tour/Bali.jpg",
   },
   {
     name: "Futuristic Tokyo Odyssey",
@@ -13,7 +13,7 @@ const toursCardsData = [
       "Discover the captivating blend of tradition and innovation in Tokyo. Experience the city's bustling streets and neon-lit nights, visit ancient temples and shrines, and savor the exquisite flavors of Japanese cuisine.",
     price: 2000,
     duration: 7,
-    imageUrl: "images/tour/tokyo.jpg",
+    imageUrl: "images/tour/Tokyo.jpg",
   },
   {
     name: "Majestic African Safari",
@@ -21,7 +21,7 @@ const toursCardsData = [
       "Embark on a thrilling journey through the African wilderness, where you'll encounter diverse wildlife, breathtaking landscapes, and vibrant cultures. Discover the untamed beauty of the African savanna.",
     price: 3000,
     duration: 10,
-    imageUrl: "images/tour/African_safari.jpg",
+    imageUrl: "images/tour/African_Safari.jpg",
   },
   {
     name: "Vibrant Rio de Janeiro Carnival",
